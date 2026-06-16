@@ -1,12 +1,12 @@
-[gd_scene load_steps=33 format=3 uid="uid://cvfdsq818j28a"]
+[gd_scene format=3 uid="uid://cvfdsq818j28a"]
 
 [ext_resource type="Theme" uid="uid://dyjqj3xaw6ffc" path="res://UI/Saves/Theme/Menggambar.tres" id="1_r3rmr"]
 [ext_resource type="Script" uid="uid://er8il324xy6a" path="res://Materi/Menggambar/Script/menggambar.gd" id="2_fch3n"]
 [ext_resource type="Texture2D" uid="uid://ce4fvscccm2uq" path="res://Assets/Sprite/Icon/PNG/Outline/Default/drawing_pencil.png" id="3_b2jsl"]
+[ext_resource type="Texture2D" uid="uid://rqmsrjh1j00w" path="res://Assets/Sprite/Kendaraan/kereta.png" id="3_yhtou"]
 [ext_resource type="Texture2D" uid="uid://dxcecanh8urkm" path="res://Assets/Sprite/Icon/PNG/Outline/Default/drawing_eraser.png" id="4_yhtou"]
 [ext_resource type="Script" uid="uid://cgik28874u7dm" path="res://Materi/Menggambar/Script/area_2d.gd" id="5_leywi"]
 [ext_resource type="PackedScene" uid="uid://ihlblnk3lt00" path="res://Materi/PilihJawaban/button.tscn" id="6_urthq"]
-[ext_resource type="Texture2D" uid="uid://d2106sg20kk8i" path="res://Assets/Sprite/Kendaraan/kereta.jpg" id="7_r3rmr"]
 [ext_resource type="Script" uid="uid://bdxwiohpq0a60" path="res://Materi/Menggambar/Script/perfection_area.gd" id="8_0c0y5"]
 [ext_resource type="Script" uid="uid://djgc6jqj5i6aj" path="res://Materi/Menggambar/Script/get_trigger.gd" id="9_5anh1"]
 [ext_resource type="PackedScene" uid="uid://qwt48h2qkhck" path="res://Scnee/MenuUtama/iconbutton.tscn" id="10_fch3n"]
@@ -26,9 +26,9 @@ fractal_weighted_strength = 1.0
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0d4mh"]
 width = 1024
 height = 1024
-seamless = true
-color_ramp = SubResource("Gradient_lorbd")
 noise = SubResource("FastNoiseLite_c1uea")
+color_ramp = SubResource("Gradient_lorbd")
+seamless = true
 
 [sub_resource type="Gradient" id="Gradient_4odtt"]
 interpolation_mode = 1
@@ -131,7 +131,7 @@ corner_radius_top_right = 35
 corner_radius_bottom_right = 35
 corner_radius_bottom_left = 35
 
-[node name="Menggambar" type="Control"]
+[node name="Menggambar" type="Control" unique_id=1758738359]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -142,7 +142,7 @@ theme = ExtResource("1_r3rmr")
 script = ExtResource("2_fch3n")
 metadata/_edit_lock_ = true
 
-[node name="Bg" type="ColorRect" parent="."]
+[node name="Bg" type="ColorRect" parent="." unique_id=762251183]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -152,7 +152,7 @@ grow_vertical = 2
 color = Color(0.951756, 0.899482, 0.840384, 1)
 metadata/_edit_lock_ = true
 
-[node name="BGTexture" type="TextureRect" parent="."]
+[node name="BGTexture" type="TextureRect" parent="." unique_id=857383659]
 layout_mode = 0
 offset_right = 1024.0
 offset_bottom = 1024.0
@@ -160,7 +160,7 @@ scale = Vector2(2.34412, 1.05736)
 texture = SubResource("NoiseTexture2D_0d4mh")
 metadata/_edit_lock_ = true
 
-[node name="Canvas2" type="ColorRect" parent="."]
+[node name="Canvas2" type="ColorRect" parent="." unique_id=1243633203]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -177,7 +177,7 @@ pivot_offset = Vector2(762, 404)
 color = Color(0.450648, 0.450648, 0.450648, 0.372549)
 metadata/_edit_lock_ = true
 
-[node name="Canvas3" type="ColorRect" parent="."]
+[node name="Canvas3" type="ColorRect" parent="." unique_id=1971295415]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -193,16 +193,22 @@ grow_vertical = 0
 pivot_offset = Vector2(762, 404)
 metadata/_edit_lock_ = true
 
-[node name="Lines" type="Node2D" parent="."]
+[node name="Lines" type="Node2D" parent="." unique_id=1812229015]
 
-[node name="Line2D" type="Line2D" parent="Lines"]
+[node name="Sprite2D" type="Sprite2D" parent="Lines" unique_id=1352314615]
+position = Vector2(1219, 577)
+scale = Vector2(1.083, 1.083)
+texture = ExtResource("3_yhtou")
+metadata/_edit_lock_ = true
+
+[node name="Line2D" type="Line2D" parent="Lines" unique_id=1442407830]
 visible = false
 points = PackedVector2Array(1656, 32, 1600, 160, 752, 176)
 default_color = Color(0, 0, 0, 1)
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="ColorPallete" type="Panel" parent="."]
+[node name="ColorPallete" type="Panel" parent="." unique_id=652927987]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -216,7 +222,7 @@ offset_bottom = 420.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Button2" type="TextureRect" parent="ColorPallete"]
+[node name="Button2" type="TextureRect" parent="ColorPallete" unique_id=1725795583]
 visible = false
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
@@ -233,7 +239,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_qgsqu")
 
-[node name="Shadow" type="VBoxContainer" parent="ColorPallete"]
+[node name="Shadow" type="VBoxContainer" parent="ColorPallete" unique_id=594221268]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -249,32 +255,32 @@ theme_override_constants/separation = 28
 alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Button2" type="TextureRect" parent="ColorPallete/Shadow"]
+[node name="Button2" type="TextureRect" parent="ColorPallete/Shadow" unique_id=579933112]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture = SubResource("GradientTexture2D_qgsqu")
 
-[node name="Button3" type="TextureRect" parent="ColorPallete/Shadow"]
+[node name="Button3" type="TextureRect" parent="ColorPallete/Shadow" unique_id=1030295437]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture = SubResource("GradientTexture2D_qgsqu")
 
-[node name="Button4" type="TextureRect" parent="ColorPallete/Shadow"]
+[node name="Button4" type="TextureRect" parent="ColorPallete/Shadow" unique_id=1417528331]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture = SubResource("GradientTexture2D_qgsqu")
 
-[node name="Button5" type="TextureRect" parent="ColorPallete/Shadow"]
+[node name="Button5" type="TextureRect" parent="ColorPallete/Shadow" unique_id=1628632900]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture = SubResource("GradientTexture2D_qgsqu")
 
-[node name="Button6" type="TextureRect" parent="ColorPallete/Shadow"]
+[node name="Button6" type="TextureRect" parent="ColorPallete/Shadow" unique_id=1120967134]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture = SubResource("GradientTexture2D_qgsqu")
 
-[node name="Button" type="VBoxContainer" parent="ColorPallete"]
+[node name="Button" type="VBoxContainer" parent="ColorPallete" unique_id=774411913]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -287,7 +293,7 @@ grow_vertical = 2
 theme_override_constants/separation = 28
 alignment = 1
 
-[node name="Blue" type="TextureButton" parent="ColorPallete/Button"]
+[node name="Blue" type="TextureButton" parent="ColorPallete/Button" unique_id=1302405003]
 layout_mode = 2
 texture_normal = SubResource("GradientTexture2D_b1hhl")
 texture_pressed = SubResource("GradientTexture2D_b1hhl")
@@ -295,7 +301,7 @@ texture_hover = SubResource("GradientTexture2D_b1hhl")
 texture_disabled = SubResource("GradientTexture2D_b1hhl")
 texture_focused = SubResource("GradientTexture2D_b1hhl")
 
-[node name="Yelow" type="TextureButton" parent="ColorPallete/Button"]
+[node name="Yelow" type="TextureButton" parent="ColorPallete/Button" unique_id=925180013]
 layout_mode = 2
 texture_normal = SubResource("GradientTexture2D_lxnlj")
 texture_pressed = SubResource("GradientTexture2D_lxnlj")
@@ -303,7 +309,7 @@ texture_hover = SubResource("GradientTexture2D_lxnlj")
 texture_disabled = SubResource("GradientTexture2D_lxnlj")
 texture_focused = SubResource("GradientTexture2D_lxnlj")
 
-[node name="Red" type="TextureButton" parent="ColorPallete/Button"]
+[node name="Red" type="TextureButton" parent="ColorPallete/Button" unique_id=1499187706]
 layout_mode = 2
 texture_normal = SubResource("GradientTexture2D_51qeh")
 texture_pressed = SubResource("GradientTexture2D_51qeh")
@@ -311,7 +317,7 @@ texture_hover = SubResource("GradientTexture2D_51qeh")
 texture_disabled = SubResource("GradientTexture2D_51qeh")
 texture_focused = SubResource("GradientTexture2D_51qeh")
 
-[node name="Green" type="TextureButton" parent="ColorPallete/Button"]
+[node name="Green" type="TextureButton" parent="ColorPallete/Button" unique_id=1586463643]
 layout_mode = 2
 texture_normal = SubResource("GradientTexture2D_ij6bv")
 texture_pressed = SubResource("GradientTexture2D_ij6bv")
@@ -319,7 +325,7 @@ texture_hover = SubResource("GradientTexture2D_ij6bv")
 texture_disabled = SubResource("GradientTexture2D_ij6bv")
 texture_focused = SubResource("GradientTexture2D_ij6bv")
 
-[node name="Black" type="TextureButton" parent="ColorPallete/Button"]
+[node name="Black" type="TextureButton" parent="ColorPallete/Button" unique_id=1987551525]
 layout_mode = 2
 texture_normal = SubResource("GradientTexture2D_ji7jr")
 texture_pressed = SubResource("GradientTexture2D_ji7jr")
@@ -327,7 +333,7 @@ texture_hover = SubResource("GradientTexture2D_ji7jr")
 texture_disabled = SubResource("GradientTexture2D_ji7jr")
 texture_focused = SubResource("GradientTexture2D_ji7jr")
 
-[node name="TextureButton2" type="ColorRect" parent="."]
+[node name="TextureButton2" type="ColorRect" parent="." unique_id=2035056308]
 layout_mode = 0
 offset_left = 190.0
 offset_top = 238.0
@@ -338,12 +344,17 @@ scale = Vector2(1.55902, 3.59849)
 pivot_offset = Vector2(32, 32)
 color = Color(0, 0, 0, 0.156863)
 
-[node name="Penghapus" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 184.0
-offset_top = 225.0
-offset_right = 248.0
-offset_bottom = 289.0
+[node name="Penghapus" type="TextureButton" parent="." unique_id=1319532544]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.086
+anchor_top = 0.12200001
+anchor_right = 0.125
+anchor_bottom = 0.354
+offset_left = -22.40001
+offset_top = 93.23999
+offset_right = -52.0
+offset_bottom = -93.32001
 rotation = 0.330804
 scale = Vector2(1.55902, 3.59849)
 pivot_offset = Vector2(32, 32)
@@ -353,26 +364,26 @@ texture_hover = SubResource("GradientTexture2D_e6kb5")
 texture_disabled = SubResource("GradientTexture2D_e6kb5")
 texture_focused = SubResource("GradientTexture2D_e6kb5")
 
-[node name="Mouse_follower" type="Marker2D" parent="."]
+[node name="Mouse_follower" type="Marker2D" parent="." unique_id=352813844]
 
-[node name="Pen" type="TextureRect" parent="Mouse_follower"]
+[node name="Pen" type="TextureRect" parent="Mouse_follower" unique_id=1871447061]
 offset_right = 57.0
 offset_bottom = 57.0
 texture = ExtResource("3_b2jsl")
 
-[node name="Penghapus" type="TextureRect" parent="Mouse_follower"]
+[node name="Penghapus" type="TextureRect" parent="Mouse_follower" unique_id=1737265820]
 visible = false
 offset_right = 57.0
 offset_bottom = 57.0
 texture = ExtResource("4_yhtou")
 
-[node name="Area2D" type="Area2D" parent="Mouse_follower"]
+[node name="Area2D" type="Area2D" parent="Mouse_follower" unique_id=992211613]
 script = ExtResource("5_leywi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse_follower/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse_follower/Area2D" unique_id=325659668]
 shape = SubResource("CircleShape2D_1sr8g")
 
-[node name="VSlider" type="VSlider" parent="."]
+[node name="VSlider" type="VSlider" parent="." unique_id=2088609995]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 0
 offset_left = 140.0
@@ -385,7 +396,7 @@ value = 1.0
 tick_count = 11
 ticks_on_borders = true
 
-[node name="Button" parent="." node_paths=PackedStringArray("affirmation_dialogue") instance=ExtResource("6_urthq")]
+[node name="Button" parent="." unique_id=1099726586 node_paths=PackedStringArray("affirmation_dialogue") instance=ExtResource("6_urthq")]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(250, 50)
@@ -407,813 +418,808 @@ next_level = "res://Scnee/Level/Kendaraan/Level3/winner_kendaraan_3.tscn"
 affirmation = true
 affirmation_dialogue = NodePath("../Dialogue")
 
-[node name="Drawing" type="Node2D" parent="."]
+[node name="Drawing" type="Node2D" parent="." unique_id=155219224]
 position = Vector2(1219, 577)
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Drawing"]
-scale = Vector2(1.083, 1.083)
-texture = ExtResource("7_r3rmr")
-metadata/_edit_lock_ = true
-
-[node name="PerfectionArea" type="Node2D" parent="Drawing"]
+[node name="PerfectionArea" type="Node2D" parent="Drawing" unique_id=1403547589]
 script = ExtResource("8_0c0y5")
 metadata/_edit_lock_ = true
 
-[node name="GetTrigger" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1951312049 groups=["PerfectioAarea"]]
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger" unique_id=1089735080]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger2" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger2" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1658667132 groups=["PerfectioAarea"]]
 position = Vector2(0, -65)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger2" unique_id=850175812]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger3" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger3" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1576351460 groups=["PerfectioAarea"]]
 position = Vector2(0, -129)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger3" unique_id=692400166]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger4" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger4" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1146378551 groups=["PerfectioAarea"]]
 position = Vector2(0, -193)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger4" unique_id=848627002]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger5" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger5" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1825014689 groups=["PerfectioAarea"]]
 position = Vector2(0, -257)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger5" unique_id=1826004622]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger6" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger6" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=553984852 groups=["PerfectioAarea"]]
 position = Vector2(0, -321)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger6" unique_id=99751542]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger11" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger11" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1334804195 groups=["PerfectioAarea"]]
 position = Vector2(0, 327)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger11"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger11" unique_id=1163067212]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger12" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger12" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=533121195 groups=["PerfectioAarea"]]
 position = Vector2(0, 263)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger12"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger12" unique_id=291183010]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger13" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger13" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1207510243 groups=["PerfectioAarea"]]
 position = Vector2(0, 199)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger13"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger13" unique_id=1246753905]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger14" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger14" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1549827279 groups=["PerfectioAarea"]]
 position = Vector2(0, 135)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger14"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger14" unique_id=1952781995]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger15" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger15" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=715563301 groups=["PerfectioAarea"]]
 position = Vector2(0, 71)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger15"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger15" unique_id=1336882295]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger9" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger9" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=14986817 groups=["PerfectioAarea"]]
 position = Vector2(-67, 0)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger9"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger9" unique_id=1059860688]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger16" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger16" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=892459879 groups=["PerfectioAarea"]]
 position = Vector2(-67, -65)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger16"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger16" unique_id=1902975258]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger17" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger17" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1034227963 groups=["PerfectioAarea"]]
 position = Vector2(-67, -129)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger17"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger17" unique_id=1326553382]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger18" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger18" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1332042177 groups=["PerfectioAarea"]]
 position = Vector2(-67, -193)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger18"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger18" unique_id=1309159924]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger19" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger19" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1848583859 groups=["PerfectioAarea"]]
 position = Vector2(-67, -257)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger19"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger19" unique_id=1095747324]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger20" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger20" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1528761061 groups=["PerfectioAarea"]]
 position = Vector2(-67, -321)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger20"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger20" unique_id=455128871]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger25" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger25" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=332504606 groups=["PerfectioAarea"]]
 position = Vector2(-67, 263)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger25"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger25" unique_id=439306580]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger26" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger26" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=805274137 groups=["PerfectioAarea"]]
 position = Vector2(-67, 199)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger26"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger26" unique_id=130340416]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger27" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger27" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=2088157196 groups=["PerfectioAarea"]]
 position = Vector2(-67, 135)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger27"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger27" unique_id=645365760]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger28" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger28" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=495367866 groups=["PerfectioAarea"]]
 position = Vector2(-67, 71)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger28"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger28" unique_id=1904778774]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger29" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger29" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=615484443 groups=["PerfectioAarea"]]
 position = Vector2(-131, 0)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger29"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger29" unique_id=1064071010]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger30" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger30" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=119739306 groups=["PerfectioAarea"]]
 position = Vector2(-131, -65)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger30"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger30" unique_id=1838135364]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger31" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger31" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=853841324 groups=["PerfectioAarea"]]
 position = Vector2(-131, -129)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger31"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger31" unique_id=1702923355]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger32" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger32" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1567612848 groups=["PerfectioAarea"]]
 position = Vector2(-131, -193)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger32"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger32" unique_id=1900441147]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger33" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger33" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=623100177 groups=["PerfectioAarea"]]
 position = Vector2(-131, -257)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger33"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger33" unique_id=859362287]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger34" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger34" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=773553166 groups=["PerfectioAarea"]]
 position = Vector2(-131, -321)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger34"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger34" unique_id=1575201996]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger39" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger39" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=2068202333 groups=["PerfectioAarea"]]
 position = Vector2(-131, 263)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger39"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger39" unique_id=1476213294]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger40" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger40" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=33821851 groups=["PerfectioAarea"]]
 position = Vector2(-131, 199)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger40"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger40" unique_id=178054226]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger41" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger41" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=654661770 groups=["PerfectioAarea"]]
 position = Vector2(-131, 135)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger41"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger41" unique_id=1599082111]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger42" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger42" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1265526661 groups=["PerfectioAarea"]]
 position = Vector2(-131, 71)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger42"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger42" unique_id=392042828]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger43" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger43" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=2005671446 groups=["PerfectioAarea"]]
 position = Vector2(-195, 0)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger43"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger43" unique_id=1362122683]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger44" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger44" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=83930546 groups=["PerfectioAarea"]]
 position = Vector2(-195, -65)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger44"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger44" unique_id=215115294]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger45" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger45" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=110177288 groups=["PerfectioAarea"]]
 position = Vector2(-195, -129)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger45"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger45" unique_id=1030144593]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger46" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger46" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=116813096 groups=["PerfectioAarea"]]
 position = Vector2(-195, -193)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger46"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger46" unique_id=1738460207]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger47" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger47" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=709681964 groups=["PerfectioAarea"]]
 position = Vector2(-195, -257)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger47"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger47" unique_id=427933951]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger53" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger53" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=2006936569 groups=["PerfectioAarea"]]
 position = Vector2(-195, 263)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger53"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger53" unique_id=389318221]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger54" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger54" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=2007358878 groups=["PerfectioAarea"]]
 position = Vector2(-195, 199)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger54"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger54" unique_id=1335753415]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger55" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger55" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=441203227 groups=["PerfectioAarea"]]
 position = Vector2(-195, 135)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger55"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger55" unique_id=851435564]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger56" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger56" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=405596548 groups=["PerfectioAarea"]]
 position = Vector2(-195, 71)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger56"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger56" unique_id=538169489]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger57" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger57" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=469330754 groups=["PerfectioAarea"]]
 position = Vector2(-259, 0)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger57"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger57" unique_id=77487311]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger58" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger58" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=2036769989 groups=["PerfectioAarea"]]
 position = Vector2(-259, -65)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger58"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger58" unique_id=732207285]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger59" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger59" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=345849417 groups=["PerfectioAarea"]]
 position = Vector2(-259, -129)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger59"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger59" unique_id=643350475]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger60" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger60" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1572232844 groups=["PerfectioAarea"]]
 position = Vector2(-259, -193)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger60"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger60" unique_id=929303004]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger66" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger66" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1535323012 groups=["PerfectioAarea"]]
 position = Vector2(-259, 327)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger66"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger66" unique_id=1065084170]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger67" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger67" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1968721740 groups=["PerfectioAarea"]]
 position = Vector2(-259, 263)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger67"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger67" unique_id=2126297273]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger68" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger68" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1177034922 groups=["PerfectioAarea"]]
 position = Vector2(-259, 199)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger68"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger68" unique_id=1896834366]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger69" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger69" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1075678504 groups=["PerfectioAarea"]]
 position = Vector2(-259, 135)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger69"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger69" unique_id=2021538691]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger70" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger70" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1960039084 groups=["PerfectioAarea"]]
 position = Vector2(-259, 71)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger70"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger70" unique_id=2126498073]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger80" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger80" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=799921548 groups=["PerfectioAarea"]]
 position = Vector2(-323, 327)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger80"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger80" unique_id=1921111719]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger81" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger81" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=642247928 groups=["PerfectioAarea"]]
 position = Vector2(-323, 263)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger81"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger81" unique_id=2142331426]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger82" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger82" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=589359195 groups=["PerfectioAarea"]]
 position = Vector2(-323, 199)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger82"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger82" unique_id=1498226646]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger83" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger83" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=264197489 groups=["PerfectioAarea"]]
 position = Vector2(-323, 135)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger83"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger83" unique_id=809714217]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger84" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger84" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1780151504 groups=["PerfectioAarea"]]
 position = Vector2(-323, 71)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger84"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger84" unique_id=2021436069]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger183" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger183" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=2065550251 groups=["PerfectioAarea"]]
 position = Vector2(61, 0)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger183"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger183" unique_id=1102610570]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger184" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger184" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=607281102 groups=["PerfectioAarea"]]
 position = Vector2(61, -65)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger184"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger184" unique_id=1021085290]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger185" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger185" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1710465999 groups=["PerfectioAarea"]]
 position = Vector2(61, -129)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger185"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger185" unique_id=262949151]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger186" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger186" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1221923648 groups=["PerfectioAarea"]]
 position = Vector2(61, -193)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger186"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger186" unique_id=1424084331]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger192" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger192" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1781096813 groups=["PerfectioAarea"]]
 position = Vector2(61, 327)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger192"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger192" unique_id=628562495]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger193" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger193" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1041314975 groups=["PerfectioAarea"]]
 position = Vector2(61, 263)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger193"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger193" unique_id=609767170]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger194" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger194" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=742911735 groups=["PerfectioAarea"]]
 position = Vector2(61, 199)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger194"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger194" unique_id=1186634808]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger195" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger195" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=764091474 groups=["PerfectioAarea"]]
 position = Vector2(61, 135)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger195"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger195" unique_id=1602974866]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger196" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger196" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=2139043402 groups=["PerfectioAarea"]]
 position = Vector2(61, 71)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger196"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger196" unique_id=2056052901]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger197" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger197" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=2133730440 groups=["PerfectioAarea"]]
 position = Vector2(125, 0)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger197"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger197" unique_id=292146195]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger198" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger198" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1248651134 groups=["PerfectioAarea"]]
 position = Vector2(125, -65)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger198"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger198" unique_id=1468129316]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger199" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger199" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=710802493 groups=["PerfectioAarea"]]
 position = Vector2(125, -129)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger199"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger199" unique_id=230465842]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger200" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger200" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=662503294 groups=["PerfectioAarea"]]
 position = Vector2(125, -193)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger200"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger200" unique_id=663735522]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger206" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger206" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=80566410 groups=["PerfectioAarea"]]
 position = Vector2(125, 327)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger206"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger206" unique_id=1180587382]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger207" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger207" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=797903328 groups=["PerfectioAarea"]]
 position = Vector2(125, 263)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger207"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger207" unique_id=934344143]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger208" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger208" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=631097375 groups=["PerfectioAarea"]]
 position = Vector2(125, 199)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger208"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger208" unique_id=991233052]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger209" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger209" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1718723335 groups=["PerfectioAarea"]]
 position = Vector2(125, 135)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger209"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger209" unique_id=1966722782]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger210" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger210" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=158722229 groups=["PerfectioAarea"]]
 position = Vector2(125, 71)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger210"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger210" unique_id=1063090034]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger211" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger211" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=556144725 groups=["PerfectioAarea"]]
 position = Vector2(189, 0)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger211"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger211" unique_id=170247055]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger212" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger212" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=334789329 groups=["PerfectioAarea"]]
 position = Vector2(189, -65)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger212"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger212" unique_id=468795383]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger213" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger213" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=878568037 groups=["PerfectioAarea"]]
 position = Vector2(189, -129)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger213"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger213" unique_id=1882381976]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger214" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger214" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1127272542 groups=["PerfectioAarea"]]
 position = Vector2(189, -193)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger214"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger214" unique_id=2088975807]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger220" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger220" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1767115771 groups=["PerfectioAarea"]]
 position = Vector2(189, 327)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger220"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger220" unique_id=1379164706]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger221" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger221" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1310560555 groups=["PerfectioAarea"]]
 position = Vector2(189, 263)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger221"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger221" unique_id=1446319480]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger222" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger222" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1303370246 groups=["PerfectioAarea"]]
 position = Vector2(189, 199)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger222"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger222" unique_id=325406951]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger223" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger223" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=2090186861 groups=["PerfectioAarea"]]
 position = Vector2(189, 135)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger223"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger223" unique_id=140357539]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger224" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger224" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1253249408 groups=["PerfectioAarea"]]
 position = Vector2(189, 71)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger224"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger224" unique_id=1151538539]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger225" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger225" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=521840130 groups=["PerfectioAarea"]]
 position = Vector2(253, 0)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger225"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger225" unique_id=671686596]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger226" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger226" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=2143928979 groups=["PerfectioAarea"]]
 position = Vector2(253, -65)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger226"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger226" unique_id=1969688449]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger227" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger227" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=767589647 groups=["PerfectioAarea"]]
 position = Vector2(253, -129)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger227"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger227" unique_id=1026835534]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger228" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger228" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1196822136 groups=["PerfectioAarea"]]
 position = Vector2(253, -193)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger228"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger228" unique_id=520314846]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger234" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger234" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1374154147 groups=["PerfectioAarea"]]
 position = Vector2(253, 327)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger234"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger234" unique_id=11962618]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger235" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger235" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1884523530 groups=["PerfectioAarea"]]
 position = Vector2(253, 263)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger235"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger235" unique_id=649638871]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger236" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger236" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1424595280 groups=["PerfectioAarea"]]
 position = Vector2(253, 199)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger236"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger236" unique_id=1380799867]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger237" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger237" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1460490469 groups=["PerfectioAarea"]]
 position = Vector2(253, 135)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger237"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger237" unique_id=1755488925]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger238" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger238" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1756759718 groups=["PerfectioAarea"]]
 position = Vector2(253, 71)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger238"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger238" unique_id=334732406]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger239" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger239" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1014410100 groups=["PerfectioAarea"]]
 position = Vector2(317, 0)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger239"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger239" unique_id=1197629406]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger240" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger240" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=895994838 groups=["PerfectioAarea"]]
 position = Vector2(317, -65)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger240"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger240" unique_id=2029931452]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger241" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger241" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1825687107 groups=["PerfectioAarea"]]
 position = Vector2(317, -129)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger241"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger241" unique_id=1858280712]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger242" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger242" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=86689428 groups=["PerfectioAarea"]]
 position = Vector2(317, -193)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger242"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger242" unique_id=1543261177]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger248" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger248" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1911035713 groups=["PerfectioAarea"]]
 position = Vector2(317, 327)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger248"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger248" unique_id=1675749477]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger249" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger249" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1041744381 groups=["PerfectioAarea"]]
 position = Vector2(317, 263)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger249"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger249" unique_id=1601045592]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger250" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger250" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=2108854978 groups=["PerfectioAarea"]]
 position = Vector2(317, 199)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger250"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger250" unique_id=207415872]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger251" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger251" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=1265872676 groups=["PerfectioAarea"]]
 position = Vector2(317, 135)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger251"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger251" unique_id=1800219799]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="GetTrigger252" type="StaticBody2D" parent="Drawing/PerfectionArea" groups=["PerfectioAarea"]]
+[node name="GetTrigger252" type="StaticBody2D" parent="Drawing/PerfectionArea" unique_id=335914911 groups=["PerfectioAarea"]]
 position = Vector2(317, 71)
 script = ExtResource("9_5anh1")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger252"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawing/PerfectionArea/GetTrigger252" unique_id=1788763384]
 shape = SubResource("CircleShape2D_cx27y")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2092064820]
 
-[node name="Back" parent="CanvasLayer" instance=ExtResource("10_fch3n")]
+[node name="Back" parent="CanvasLayer" unique_id=222279126 instance=ExtResource("10_fch3n")]
 custom_minimum_size = Vector2(120.08, 129.75)
 offset_left = 24.0
 offset_top = 24.0
@@ -1223,7 +1229,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_b2jsl")
 expand_icon = false
 path_to = "res://Scnee/Level/Kendaraan/KotaKendaraan/kota_kendaraan.tscn"
 
-[node name="Dialogue" parent="." instance=ExtResource("11_yhtou")]
+[node name="Dialogue" parent="." unique_id=464483557 instance=ExtResource("11_yhtou")]
+visible = false
 layout_mode = 1
 array_dialog = Array[String](["Iya! Kamu Benar!"])
 array_voice = Array[AudioStream]([ExtResource("12_leywi")])

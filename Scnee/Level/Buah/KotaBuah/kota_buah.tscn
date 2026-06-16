@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bk50nuxfvksf"]
+[gd_scene format=3 uid="uid://bk50nuxfvksf"]
 
 [ext_resource type="Script" uid="uid://cqjl5wj3u8a3n" path="res://Scnee/Level/Buah/KotaBuah/Script/kota_buah.gd" id="1_3dj0o"]
 [ext_resource type="PackedScene" uid="uid://bejmsj6801eym" path="res://Assets/3D/City/Kota1/kota_1.tscn" id="1_4nw86"]
@@ -40,15 +40,15 @@ fractal_type = 2
 fractal_octaves = 1
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_otkoy"]
-seamless = true
-color_ramp = SubResource("Gradient_23iya")
 noise = SubResource("FastNoiseLite_rxryr")
+color_ramp = SubResource("Gradient_23iya")
+seamless = true
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_23iya"]
-seamless = true
-seamless_blend_skirt = 0.395
-as_normal_map = true
 noise = SubResource("FastNoiseLite_rxryr")
+seamless = true
+as_normal_map = true
+seamless_blend_skirt = 0.395
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_otkoy"]
 albedo_color = Color(0.830153, 0.681679, 0.596922, 1)
@@ -196,74 +196,72 @@ corner_radius_top_right = 35
 corner_radius_bottom_right = 35
 corner_radius_bottom_left = 35
 
-[node name="KotaBuah" type="Node3D"]
+[node name="KotaBuah" type="Node3D" unique_id=1348387012]
 script = ExtResource("1_3dj0o")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=362928005]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1844725653]
 environment = SubResource("Environment_du5u5")
 
-[node name="Kota" parent="." instance=ExtResource("1_4nw86")]
+[node name="Kota" parent="." unique_id=397474428 instance=ExtResource("1_4nw86")]
 
-[node name="Cam" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+[node name="Cam" type="Node3D" parent="." unique_id=2067699820]
+transform = Transform3D(1, 0, 0, 0, 0.70710707, 0.7071068, 0, -0.7071068, 0.70710707, 0, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Cam"]
+[node name="Camera3D" type="Camera3D" parent="Cam" unique_id=1330895583]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.11)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=274193202]
 transform = Transform3D(0.35031, 0, 0, 0, -7.02904e-09, 1, 0, -0.160806, -4.37114e-08, -9.18293e-08, 0, 0)
 mesh = SubResource("QuadMesh_rxryr")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1731329009]
 transform = Transform3D(0.0519305, 0, 0, 0, -7.02904e-09, 1, 0, -0.160806, -4.37114e-08, -9.18293e-08, 0.1, 0)
 mesh = SubResource("QuadMesh_3hhxe")
 
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=1791791144]
 transform = Transform3D(-0.0519305, -1.40581e-08, -3.82137e-15, 0, -7.02904e-09, 1, -4.53991e-09, 0.160806, 4.37114e-08, -5.25464, 0.1, 0)
 mesh = SubResource("QuadMesh_3hhxe")
 
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=1530202579]
 transform = Transform3D(0.0519305, 0, 0, 0, -7.02904e-09, 1, 0, -0.160806, -4.37114e-08, -10.5093, 0.1, 0)
 mesh = SubResource("QuadMesh_3hhxe")
 
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=1098499043]
 transform = Transform3D(-0.0519305, 1.40581e-08, 3.82137e-15, 0, -7.02904e-09, 1, 4.53991e-09, 0.160806, 4.37114e-08, -15.7639, 0.1, 0)
 mesh = SubResource("QuadMesh_3hhxe")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=893036549]
 transform = Transform3D(0.0519305, 0, 0, 0, -7.02904e-09, 1, 0, -0.160806, -4.37114e-08, 5.25464, 0.1, 0)
 mesh = SubResource("QuadMesh_3hhxe")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=351017320]
 transform = Transform3D(-0.0519305, -1.40581e-08, -3.82137e-15, 0, -7.02904e-09, 1, -4.53991e-09, 0.160806, 4.37114e-08, 10.5093, 0.1, 0)
 mesh = SubResource("QuadMesh_3hhxe")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=120184373]
 transform = Transform3D(0.0519305, 0, 0, 0, -7.02904e-09, 1, 0, -0.160806, -4.37114e-08, 15.7639, 0.1, 0)
 mesh = SubResource("QuadMesh_3hhxe")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_trwsb")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1514004850]
+libraries/ = SubResource("AnimationLibrary_trwsb")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1836825541]
 transform = Transform3D(-1.08082, 9.44885e-08, 8.26044e-15, -3.55271e-15, -8.9407e-08, 1.08082, 9.44885e-08, 1.08082, 8.9407e-08, 0, 0.452513, 7)
 flip_h = true
 flip_v = true
 render_priority = 1
 texture = SubResource("ViewportTexture_2t8mf")
 
-[node name="SubViewport" type="SubViewport" parent="Sprite3D"]
+[node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=1306620367]
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(612, 122)
 
-[node name="ColorRect2" type="ColorRect" parent="Sprite3D/SubViewport"]
+[node name="ColorRect2" type="ColorRect" parent="Sprite3D/SubViewport" unique_id=1003649059]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -271,7 +269,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.109804, 0.258824, 0.352941, 0.384314)
 
-[node name="ColorRect" type="ColorRect" parent="Sprite3D/SubViewport"]
+[node name="ColorRect" type="ColorRect" parent="Sprite3D/SubViewport" unique_id=1179951850]
 visible = false
 custom_minimum_size = Vector2(29.6, 0)
 offset_left = 2.0
@@ -279,7 +277,7 @@ offset_right = 31.6
 offset_bottom = 127.0
 color = Color(0.847658, 0.423438, 0, 1)
 
-[node name="Label" type="Label" parent="Sprite3D/SubViewport"]
+[node name="Label" type="Label" parent="Sprite3D/SubViewport" unique_id=1341539698]
 offset_left = 35.0
 offset_right = 578.0
 offset_bottom = 127.0
@@ -291,28 +289,28 @@ visible_characters = 0
 visible_characters_behavior = 2
 visible_ratio = 0.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Sprite3D/SubViewport"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Sprite3D/SubViewport" unique_id=1981269759]
 offset_right = 580.0
 offset_bottom = 127.0
 alignment = 1
 
-[node name="3DPressed" parent="." instance=ExtResource("4_u1145")]
+[node name="3DPressed" parent="." unique_id=258936343 instance=ExtResource("4_u1145")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.522035, 0, 1.50396)
 nama_level = "Level 2"
 path_level = "res://Scnee/Level/Buah/Level2/drag_an_drop_buah_1.tscn"
 index_reward = 1
 
-[node name="3DPressed2" parent="." instance=ExtResource("4_u1145")]
+[node name="3DPressed2" parent="." unique_id=1404936494 instance=ExtResource("4_u1145")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.52203, 0.0204592, 2.50396)
 path_level = "res://Scnee/Level/Buah/Level1/pilih_jawaban_buah_1.tscn"
 
-[node name="3DPressed3" parent="." instance=ExtResource("4_u1145")]
+[node name="3DPressed3" parent="." unique_id=2009151639 instance=ExtResource("4_u1145")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47797, 0, -1.49604)
 nama_level = "Level 3"
 path_level = "res://Scnee/Level/Buah/Level 3/Menggambar_Buah_1.tscn"
 index_reward = 2
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1931742625]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -324,7 +322,7 @@ mouse_filter = 2
 theme = SubResource("Theme_otkoy")
 metadata/_edit_lock_ = true
 
-[node name="TextureRect2" type="TextureRect" parent="Control"]
+[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=373904178]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -335,7 +333,7 @@ mouse_filter = 2
 texture = SubResource("GradientTexture2D_23iya")
 metadata/_edit_lock_ = true
 
-[node name="Panel" type="Panel" parent="Control"]
+[node name="Panel" type="Panel" parent="Control" unique_id=651684108]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -349,7 +347,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_23iya")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel" unique_id=435666924]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -361,21 +359,21 @@ grow_vertical = 2
 theme_override_constants/separation = 90
 alignment = 1
 
-[node name="Button" type="Button" parent="Control/Panel/HBoxContainer"]
+[node name="Button" type="Button" parent="Control/Panel/HBoxContainer" unique_id=1517072130]
 layout_mode = 2
 text = "      1      "
 
-[node name="Button2" type="Button" parent="Control/Panel/HBoxContainer"]
+[node name="Button2" type="Button" parent="Control/Panel/HBoxContainer" unique_id=1065371718]
 layout_mode = 2
 text = "      2      "
 
-[node name="Button3" type="Button" parent="Control/Panel/HBoxContainer"]
+[node name="Button3" type="Button" parent="Control/Panel/HBoxContainer" unique_id=1994879926]
 layout_mode = 2
 text = "      3      "
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=273245277]
 
-[node name="Back" parent="CanvasLayer" instance=ExtResource("5_rxryr")]
+[node name="Back" parent="CanvasLayer" unique_id=803488616 instance=ExtResource("5_rxryr")]
 custom_minimum_size = Vector2(120.08, 129.75)
 offset_left = 24.0
 offset_top = 24.0

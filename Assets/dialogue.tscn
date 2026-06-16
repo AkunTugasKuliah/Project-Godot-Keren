@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bc2ptk5lt4xca"]
+[gd_scene format=3 uid="uid://bc2ptk5lt4xca"]
 
 [ext_resource type="Script" uid="uid://b3fg8dx5ynd8b" path="res://Scnee/Dialog/dialogue.gd" id="1_lnuv8"]
 [ext_resource type="PackedScene" uid="uid://bdxqdd3xc5bvc" path="res://Materi/Karakter/character.tscn" id="1_p5iom"]
@@ -139,7 +139,7 @@ _data = {
 &"in": SubResource("Animation_lnuv8")
 }
 
-[node name="Dialogue" type="Control"]
+[node name="Dialogue" type="Control" unique_id=205414920]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -152,7 +152,7 @@ array_dialog = Array[String](["Selamat datang di. Permainan Digital Ainun Habibi
 reveal_speed = 0.005
 text_display_time = 5.0
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=2010511066]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -161,7 +161,7 @@ offset_top = -40.0
 offset_right = 40.0
 grow_vertical = 0
 
-[node name="TextureRect2" type="TextureRect" parent="Control"]
+[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=197344957]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 10.0
@@ -171,7 +171,7 @@ offset_bottom = 933.0
 scale = Vector2(0.347735, 0.347735)
 texture = SubResource("ViewportTexture_yefym")
 
-[node name="TextureRect3" type="TextureRect" parent="Control"]
+[node name="TextureRect3" type="TextureRect" parent="Control" unique_id=96817999]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -188,7 +188,7 @@ scale = Vector2(5.39164, 1.23661)
 pivot_offset = Vector2(32, 32)
 texture = SubResource("GradientTexture2D_hd2m6")
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1940493199]
 layout_mode = 0
 offset_top = -468.0
 offset_right = 926.0
@@ -196,27 +196,27 @@ offset_bottom = 925.0
 scale = Vector2(0.347735, 0.347735)
 texture = SubResource("ViewportTexture_yefym")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Control/TextureRect"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Control/TextureRect" unique_id=214649643]
 
-[node name="SubViewport" type="SubViewport" parent="Control/TextureRect/CanvasLayer"]
+[node name="SubViewport" type="SubViewport" parent="Control/TextureRect/CanvasLayer" unique_id=1936161306]
 transparent_bg = true
 size = Vector2i(632, 952)
 
-[node name="Character" parent="Control/TextureRect/CanvasLayer/SubViewport" instance=ExtResource("1_p5iom")]
+[node name="Character" parent="Control/TextureRect/CanvasLayer/SubViewport" unique_id=2092127214 instance=ExtResource("1_p5iom")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2736, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Control/TextureRect/CanvasLayer/SubViewport/Character"]
+[node name="Camera3D" type="Camera3D" parent="Control/TextureRect/CanvasLayer/SubViewport/Character" unique_id=938069498]
 transform = Transform3D(1, 0, 0, 0, 0.99142, 0.130717, 0, -0.130717, 0.99142, 0, 2.88241, 5.24673)
 projection = 1
 size = 4.42243
 
-[node name="Enviroment" type="Node3D" parent="Control/TextureRect/CanvasLayer/SubViewport"]
+[node name="Enviroment" type="Node3D" parent="Control/TextureRect/CanvasLayer/SubViewport" unique_id=877095812]
 metadata/_edit_lock_ = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Control/TextureRect/CanvasLayer/SubViewport/Enviroment"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Control/TextureRect/CanvasLayer/SubViewport/Enviroment" unique_id=837678]
 environment = SubResource("Environment_hd2m6")
 
-[node name="LabelBackground" type="Label" parent="Control/TextureRect"]
+[node name="LabelBackground" type="Label" parent="Control/TextureRect" unique_id=902043940]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 1117.43
@@ -227,32 +227,30 @@ scale = Vector2(2.7215, 2.7215)
 theme_override_styles/normal = SubResource("StyleBoxFlat_lnuv8")
 label_settings = SubResource("LabelSettings_hd2m6")
 
-[node name="Polygon2D" type="Polygon2D" parent="Control/TextureRect/LabelBackground"]
+[node name="Polygon2D" type="Polygon2D" parent="Control/TextureRect/LabelBackground" unique_id=1922880205]
 modulate = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-47, 26, -95, 158, 1, 98)
 
-[node name="Label" type="Label" parent="Control/TextureRect"]
+[node name="Label" type="Label" parent="Control/TextureRect" unique_id=1995030060]
 z_as_relative = false
 layout_mode = 0
 offset_left = 1070.87
 offset_top = -46.5597
 offset_right = 1178.87
-offset_bottom = 29.4406
+offset_bottom = 29.722466
 scale = Vector2(2.7215, 2.7215)
 theme_override_styles/normal = SubResource("StyleBoxFlat_lnuv8")
 label_settings = SubResource("LabelSettings_yefym")
 
-[node name="Polygon2D" type="Polygon2D" parent="Control/TextureRect/Label"]
+[node name="Polygon2D" type="Polygon2D" parent="Control/TextureRect/Label" unique_id=784094120]
 color = Color(0.980392, 0.960784, 0.956863, 1)
 polygon = PackedVector2Array(-47, 26, -95, 158, 1, 98)
 
-[node name="TimerWait" type="Timer" parent="."]
+[node name="TimerWait" type="Timer" parent="." unique_id=676807899]
 
-[node name="AudioPercakapan" type="AudioStreamPlayer" parent="."]
+[node name="AudioPercakapan" type="AudioStreamPlayer" parent="." unique_id=1403024003]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_6pk5g")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=505167861]
+libraries/ = SubResource("AnimationLibrary_6pk5g")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

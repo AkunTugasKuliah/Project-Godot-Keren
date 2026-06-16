@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://d3y5qhyh7d7p4"]
+[gd_resource type="Theme" format=3 uid="uid://d3y5qhyh7d7p4"]
 
 [ext_resource type="FontVariation" uid="uid://bunmsetoica12" path="res://UI/Saves/Font/new_font_variation.tres" id="1_n8cue"]
 
@@ -8,7 +8,6 @@ corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
-anti_aliasing_size = 2.665
 
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)

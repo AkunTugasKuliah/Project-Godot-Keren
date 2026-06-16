@@ -52,7 +52,6 @@ func scroll() -> void:
 		"scroll_horizontal",
 		card_x_positions[card_current_index],
 		scroll_duration).from(scroll_horizontal).set_trans(scroll_tween.TRANS_BACK).set_ease(scroll_tween.EASE_OUT)
-	
 	for _index in range(card_nodes.size()):
 		var _card_scale: float = card_current_scale if _index == card_current_index else card_scale
 		scroll_tween.tween_property(
@@ -60,8 +59,6 @@ func scroll() -> void:
 			"scale",
 			Vector2(_card_scale,_card_scale),
 			scroll_duration,).from(card_nodes[_index].scale).set_trans(scroll_tween.TRANS_QUAD).set_ease(scroll_tween.EASE_OUT)
-			
-
 
 func _on_ScrollContainer_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
