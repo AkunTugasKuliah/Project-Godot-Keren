@@ -54,7 +54,6 @@ func _kacamata(x: int) -> void:
 			$Female/Female/Cewe/Skeleton3D/Kacamata1.visible = false
 			$Female/Female/Cewe/Skeleton3D/Kacamata2.visible = false
 			$Female/Female/Cewe/Skeleton3D/Kacamata3.visible = true
-
 func topi(x:int):
 	match x:
 		0:
@@ -139,7 +138,6 @@ func baju(x:int):
 			$Female/Female/Cewe/Skeleton3D/BajuRatu1.visible = false
 			$Female/Female/Cewe/Skeleton3D/BajuRatu2.visible = false
 			$Female/Female/Cewe/Skeleton3D/BajuRatu3.visible = true
-
 func sepatu(x: int):
 	match x:
 		0:

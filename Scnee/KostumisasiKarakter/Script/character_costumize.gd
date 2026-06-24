@@ -9,14 +9,18 @@ func _ready() -> void:
 	
 	$AnimationPlayer.play("move")
 	locked()
-func locked():
+func locked()->void:
 	
 	if consideration[0] == false or consideration[1] == false or consideration[2] == false or consideration[3]==false:
 		label_disable.visible = true
 		button_next.disabled = true
+		button_next.visible = false
+		%ButtonReset.visible = true
 	else:
 		label_disable.visible = false
 		button_next.disabled = false
+		button_next.visible = true
+		%ButtonReset.visible = false
 func _on_topi_kiri_pressed() -> void:
 	if Global.global_index_topi < Global.max_index_topi:
 		Global.global_index_topi +=1
@@ -153,3 +157,17 @@ func _on_sepatu_kanan_pressed() -> void:
 
 func _on_button_next_pressed() -> void:
 	Transition.change_scnee("res://Scnee/MenuUtama/menu_utama.tscn")
+
+
+func _on_button_reset_pressed() -> void:
+	$Character.topi(0)
+	$Character._kacamata(0)
+	$Character.baju(0)
+	$Character.sepatu(0)
+	Global.global_index_topi = 0
+	Global.global_index_kacamata = 0
+	Global.global_index_baju = 0
+	Global.global_index_sepatu = 0
+	%ButtonReset.visible = false
+	button_next.visible = true
+	button_next.disabled = false
