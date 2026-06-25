@@ -158,7 +158,6 @@ func _on_sepatu_kanan_pressed() -> void:
 func _on_button_next_pressed() -> void:
 	Transition.change_scnee("res://Scnee/MenuUtama/menu_utama.tscn")
 
-
 func _on_button_reset_pressed() -> void:
 	$Character.topi(0)
 	$Character._kacamata(0)

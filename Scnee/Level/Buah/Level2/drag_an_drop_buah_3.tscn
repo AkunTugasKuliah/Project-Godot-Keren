@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://vmn42u00e6cs"]
+[gd_scene format=3 uid="uid://vmn42u00e6cs"]
 
 [ext_resource type="Script" uid="uid://buo1s1qjeclx1" path="res://Materi/DragAnDrop/Script/drag_an_drop.gd" id="1_oh6va"]
 [ext_resource type="Texture2D" uid="uid://cl38ntagut8df" path="res://Assets/Sprite/Patren/Vector/pattern_83.svg" id="2_qt0jr"]
@@ -35,7 +35,7 @@ corner_radius_top_right = 35
 corner_radius_bottom_right = 35
 corner_radius_bottom_left = 35
 
-[node name="DragAnDrop" type="Control"]
+[node name="DragAnDrop" type="Control" unique_id=881403983]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,7 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oh6va")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1592492887]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,7 +54,7 @@ grow_vertical = 2
 color = Color(0.972549, 0.956863, 0.917647, 1)
 metadata/_edit_lock_ = true
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2099954901]
 modulate = Color(1, 1, 1, 0.109804)
 self_modulate = Color(0.650128, 0.650128, 0.650128, 1)
 layout_mode = 0
@@ -64,14 +64,14 @@ scale = Vector2(1.849, 1.299)
 texture = ExtResource("2_qt0jr")
 stretch_mode = 1
 
-[node name="ButtonDrag" type="Control" parent="."]
+[node name="ButtonDrag" type="Control" parent="." unique_id=1542855714]
 anchors_preset = 0
 offset_top = 1040.0
 offset_right = 268.0
 offset_bottom = 1396.0
 theme = ExtResource("3_wnyyo")
 
-[node name="Button" parent="ButtonDrag" node_paths=PackedStringArray("win_pos") instance=ExtResource("4_6ypvh")]
+[node name="Button" parent="ButtonDrag" unique_id=1823500383 node_paths=PackedStringArray("win_pos") instance=ExtResource("4_6ypvh")]
 layout_mode = 0
 offset_left = 1272.0
 offset_top = -968.0
@@ -79,7 +79,7 @@ offset_right = 1400.0
 offset_bottom = -840.0
 win_pos = NodePath("../../Jawaban/Strawberi")
 
-[node name="Label" type="Button" parent="ButtonDrag/Button"]
+[node name="Label" type="Button" parent="ButtonDrag/Button" unique_id=431411615]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -93,11 +93,11 @@ pivot_offset = Vector2(312, 64)
 text = "Strawberi"
 script = ExtResource("5_nop3i")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ButtonDrag/Button/Label"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ButtonDrag/Button/Label" unique_id=2037211940]
 stream = ExtResource("6_xusb5")
 bus = &"Dialog"
 
-[node name="Button2" parent="ButtonDrag" node_paths=PackedStringArray("win_pos") instance=ExtResource("4_6ypvh")]
+[node name="Button2" parent="ButtonDrag" unique_id=54787923 node_paths=PackedStringArray("win_pos") instance=ExtResource("4_6ypvh")]
 layout_mode = 0
 offset_left = 1272.0
 offset_top = -704.0
@@ -105,7 +105,7 @@ offset_right = 1400.0
 offset_bottom = -576.0
 win_pos = NodePath("../../Jawaban/Jeruk")
 
-[node name="Label2" type="Button" parent="ButtonDrag/Button2"]
+[node name="Label2" type="Button" parent="ButtonDrag/Button2" unique_id=1263801049]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -119,11 +119,11 @@ pivot_offset = Vector2(312, 64)
 text = "Jeruk"
 script = ExtResource("5_nop3i")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ButtonDrag/Button2/Label2"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ButtonDrag/Button2/Label2" unique_id=358251610]
 stream = ExtResource("7_8ijpb")
 bus = &"Dialog"
 
-[node name="Button3" parent="ButtonDrag" node_paths=PackedStringArray("win_pos") instance=ExtResource("4_6ypvh")]
+[node name="Button3" parent="ButtonDrag" unique_id=687004485 node_paths=PackedStringArray("win_pos") instance=ExtResource("4_6ypvh")]
 layout_mode = 0
 offset_left = 1272.0
 offset_top = -448.0
@@ -131,7 +131,7 @@ offset_right = 1400.0
 offset_bottom = -320.0
 win_pos = NodePath("../../Jawaban/Anggur")
 
-[node name="Label3" type="Button" parent="ButtonDrag/Button3"]
+[node name="Label3" type="Button" parent="ButtonDrag/Button3" unique_id=405168416]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -145,11 +145,11 @@ pivot_offset = Vector2(312, 64)
 text = "Anggur"
 script = ExtResource("5_nop3i")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ButtonDrag/Button3/Label3"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ButtonDrag/Button3/Label3" unique_id=116741188]
 stream = ExtResource("8_o51ll")
 bus = &"Dialog"
 
-[node name="Button4" parent="ButtonDrag" node_paths=PackedStringArray("win_pos") instance=ExtResource("4_6ypvh")]
+[node name="Button4" parent="ButtonDrag" unique_id=1878719124 node_paths=PackedStringArray("win_pos") instance=ExtResource("4_6ypvh")]
 layout_mode = 0
 offset_left = 1272.0
 offset_top = -192.0
@@ -157,7 +157,7 @@ offset_right = 1400.0
 offset_bottom = -64.0
 win_pos = NodePath("../../Jawaban/Apel")
 
-[node name="Label4" type="Button" parent="ButtonDrag/Button4"]
+[node name="Label4" type="Button" parent="ButtonDrag/Button4" unique_id=1968215374]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -171,102 +171,102 @@ pivot_offset = Vector2(312, 64)
 text = "Apel"
 script = ExtResource("5_nop3i")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ButtonDrag/Button4/Label4"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ButtonDrag/Button4/Label4" unique_id=1971107678]
 stream = ExtResource("6_5e0qr")
 bus = &"Dialog"
 
-[node name="Jawaban" type="Control" parent="."]
+[node name="Jawaban" type="Control" parent="." unique_id=1902391870]
 anchors_preset = 0
 offset_top = 1040.0
 offset_right = 40.0
 offset_bottom = 1080.0
 
-[node name="Strawberi" type="Sprite2D" parent="Jawaban"]
+[node name="Strawberi" type="Sprite2D" parent="Jawaban" unique_id=2107348906]
 position = Vector2(2016, -384)
 metadata/_edit_group_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Jawaban/Strawberi" groups=["jawaban"]]
+[node name="StaticBody2D" type="StaticBody2D" parent="Jawaban/Strawberi" unique_id=1660183114 groups=["jawaban"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jawaban/Strawberi/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jawaban/Strawberi/StaticBody2D" unique_id=426766191]
 shape = SubResource("RectangleShape2D_tnpmq")
 
-[node name="Sprite2D" type="Sprite2D" parent="Jawaban/Strawberi"]
+[node name="Sprite2D" type="Sprite2D" parent="Jawaban/Strawberi" unique_id=1209102806]
 modulate = Color(0.305882, 0.305882, 0.305882, 0.6)
 z_index = 1
 position = Vector2(18.6, 18.6)
 scale = Vector2(1.055, 1.055)
 texture = ExtResource("5_yyx03")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Jawaban/Strawberi"]
+[node name="Sprite2D2" type="Sprite2D" parent="Jawaban/Strawberi" unique_id=1736376521]
 z_index = 1
 scale = Vector2(1.055, 1.055)
 texture = ExtResource("5_yyx03")
 
-[node name="Jeruk" type="Sprite2D" parent="Jawaban"]
+[node name="Jeruk" type="Sprite2D" parent="Jawaban" unique_id=339862782]
 position = Vector2(2016, -128)
 metadata/_edit_group_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Jawaban/Jeruk" groups=["jawaban"]]
+[node name="StaticBody2D" type="StaticBody2D" parent="Jawaban/Jeruk" unique_id=2006465073 groups=["jawaban"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jawaban/Jeruk/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jawaban/Jeruk/StaticBody2D" unique_id=1991781423]
 shape = SubResource("RectangleShape2D_tnpmq")
 
-[node name="Sprite2D" type="Sprite2D" parent="Jawaban/Jeruk"]
+[node name="Sprite2D" type="Sprite2D" parent="Jawaban/Jeruk" unique_id=344569113]
 modulate = Color(0.305882, 0.305882, 0.305882, 0.6)
 z_index = 1
 position = Vector2(18.6, 18.6)
 scale = Vector2(0.315, 0.315)
 texture = ExtResource("6_itvf4")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Jawaban/Jeruk"]
+[node name="Sprite2D2" type="Sprite2D" parent="Jawaban/Jeruk" unique_id=655131815]
 z_index = 1
 scale = Vector2(0.315, 0.315)
 texture = ExtResource("6_itvf4")
 
-[node name="Apel" type="Sprite2D" parent="Jawaban"]
+[node name="Apel" type="Sprite2D" parent="Jawaban" unique_id=1142614352]
 position = Vector2(2016, -640)
 metadata/_edit_group_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Jawaban/Apel" groups=["jawaban"]]
+[node name="StaticBody2D" type="StaticBody2D" parent="Jawaban/Apel" unique_id=542316658 groups=["jawaban"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jawaban/Apel/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jawaban/Apel/StaticBody2D" unique_id=1300526719]
 shape = SubResource("RectangleShape2D_tnpmq")
 
-[node name="Sprite2D" type="Sprite2D" parent="Jawaban/Apel"]
+[node name="Sprite2D" type="Sprite2D" parent="Jawaban/Apel" unique_id=526749467]
 modulate = Color(0.305882, 0.305882, 0.305882, 0.6)
 z_index = 1
 position = Vector2(18.6, 18.6)
 scale = Vector2(0.365, 0.365)
 texture = ExtResource("7_4aq2d")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Jawaban/Apel"]
+[node name="Sprite2D2" type="Sprite2D" parent="Jawaban/Apel" unique_id=1236474750]
 z_index = 1
 scale = Vector2(0.365, 0.365)
 texture = ExtResource("7_4aq2d")
 
-[node name="Anggur" type="Sprite2D" parent="Jawaban"]
+[node name="Anggur" type="Sprite2D" parent="Jawaban" unique_id=461468775]
 position = Vector2(2016, -904)
 flip_h = true
 metadata/_edit_group_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Jawaban/Anggur" groups=["jawaban"]]
+[node name="StaticBody2D" type="StaticBody2D" parent="Jawaban/Anggur" unique_id=828241335 groups=["jawaban"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jawaban/Anggur/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jawaban/Anggur/StaticBody2D" unique_id=782156343]
 shape = SubResource("RectangleShape2D_tnpmq")
 
-[node name="Sprite2D" type="Sprite2D" parent="Jawaban/Anggur"]
+[node name="Sprite2D" type="Sprite2D" parent="Jawaban/Anggur" unique_id=2089230803]
 modulate = Color(0.305882, 0.305882, 0.305882, 0.6)
 z_index = 1
 position = Vector2(18.6, 18.6)
 scale = Vector2(0.385, 0.385)
 texture = ExtResource("8_2dgpx")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Jawaban/Anggur"]
+[node name="Sprite2D2" type="Sprite2D" parent="Jawaban/Anggur" unique_id=1584841305]
 z_index = 1
 scale = Vector2(0.385, 0.385)
 texture = ExtResource("8_2dgpx")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1668354367]
 layout_mode = 0
 offset_left = 144.0
 offset_top = 64.0
@@ -278,7 +278,8 @@ soal yang sudah
 ditentukan"
 label_settings = SubResource("LabelSettings_gx5gw")
 
-[node name="NextButton" parent="." node_paths=PackedStringArray("affirmation_dialogue") instance=ExtResource("10_htv08")]
+[node name="NextButton" parent="." unique_id=39254293 node_paths=PackedStringArray("affirmation_dialogue") instance=ExtResource("10_htv08")]
+visible = false
 layout_mode = 0
 offset_left = 144.0
 offset_top = 816.0
@@ -293,9 +294,9 @@ next_level = "res://Scnee/Level/Buah/Level2/winner_buah_2.tscn"
 affirmation = true
 affirmation_dialogue = NodePath("../Dialogue")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1899453843]
 
-[node name="Back" parent="CanvasLayer" instance=ExtResource("17_8ijpb")]
+[node name="Back" parent="CanvasLayer" unique_id=1342981528 instance=ExtResource("17_8ijpb")]
 custom_minimum_size = Vector2(120.08, 129.75)
 offset_left = 24.0
 offset_top = 24.0
@@ -305,7 +306,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_o51ll")
 expand_icon = false
 path_to = "res://Scnee/Level/Buah/KotaBuah/kota_buah.tscn"
 
-[node name="Dialogue" parent="." instance=ExtResource("18_7fv7u")]
+[node name="Dialogue" parent="." unique_id=653478676 instance=ExtResource("18_7fv7u")]
 layout_mode = 1
 array_dialog = Array[String](["Iya! Kamu Benar!"])
 array_voice = Array[AudioStream]([ExtResource("19_46oe5")])

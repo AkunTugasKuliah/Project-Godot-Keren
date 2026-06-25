@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bsmmna6txg1ab"]
+[gd_resource type="Theme" format=3 uid="uid://bsmmna6txg1ab"]
 
 [sub_resource type="FontVariation" id="FontVariation_x50kl"]
 variation_embolden = 1.57
